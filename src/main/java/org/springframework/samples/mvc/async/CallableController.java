@@ -22,7 +22,7 @@ public class CallableController {
 			@Override
 			public String call() throws Exception {
 				Thread.sleep(2000);
-				return "Callable result";
+				return "You did it! Midi is great!!!You're able to load a large file in this call.";
 			}
 		};
 	}
@@ -34,8 +34,9 @@ public class CallableController {
 			@Override
 			public String call() throws Exception {
 				Thread.sleep(2000);
-				model.addAttribute("foo", "bar");
-				model.addAttribute("fruit", "apple");
+				model.addAttribute("user", "midi");
+				model.addAttribute("country", "China");
+
 				return "views/html";
 			}
 		};

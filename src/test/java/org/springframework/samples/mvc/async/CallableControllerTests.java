@@ -32,13 +32,13 @@ public class CallableControllerTests extends AbstractContextControllerTests {
 	public void responseBody() throws Exception {
 		MvcResult mvcResult = this.mockMvc.perform(get("/async/callable/response-body"))
 			.andExpect(request().asyncStarted())
-			.andExpect(request().asyncResult("Callable result"))
+			.andExpect(request().asyncResult("You did it! Midi is great!!!You're able to load a large file in this call."))
 			.andReturn();
 
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
 			.andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
-			.andExpect(content().string("Callable result"));
+			.andExpect(content().string("You did it! Midi is great!!!You're able to load a large file in this call."));
 	}
 
 	@Test
@@ -51,8 +51,8 @@ public class CallableControllerTests extends AbstractContextControllerTests {
 		this.mockMvc.perform(asyncDispatch(mvcResult))
 			.andExpect(status().isOk())
 			.andExpect(forwardedUrl("/WEB-INF/views/views/html.jsp"))
-			.andExpect(model().attribute("foo", "bar"))
-			.andExpect(model().attribute("fruit", "apple"));
+			.andExpect(model().attribute("user", "midi"))
+			.andExpect(model().attribute("country", "China"));
 	}
 
 	@Test
