@@ -29,6 +29,8 @@
 		<li><a href="#convert">Type Conversion</a></li>
 		<li><a href="#validation">Validation</a></li>
 		<li><a href="<c:url value="/form" />" title="forms">Forms</a></li>
+		<li><a href="<c:url value="/midi/form" />" title="midi forms">Midi Forms</a></li>
+		
 		<li><a href="<c:url value="/fileupload" />" title="fileupload">File Upload</a></li>
 		<li><a href="#exceptions">Exception Handling</a></li>
 		<li><a href="#redirect">Redirecting</a></li>
